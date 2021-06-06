@@ -11,8 +11,11 @@ import {View} from "react-native"
 import Colors from '../constants/Colors';
 import Header from "../components/Layout/Header";
 import useColorScheme from '../hooks/useColorScheme';
-import TabOneScreen from '../screens/TabOneScreen';
-import TabTwoScreen from '../screens/TabTwoScreen';
+
+import Home from '../screens/Home';
+import Search from '../screens/Search';
+import SearchResults from '../screens/SearchResults';
+
 import { BottomTabParamList, TabOneParamList, TabTwoParamList } from '../types';
 function TabBarIcon(props: { name: React.ComponentProps<typeof Ionicons>['name']; color: string }) {
   return <Ionicons size={25} style={{ marginBottom: -3 }} {...props} />;
@@ -76,10 +79,9 @@ function TabOneNavigator() {
   return (
     <TabOneStack.Navigator>
       <TabOneStack.Screen
-        name="TabOneScreen"
-        component={TabOneScreen}
+        name="Home"
+        component={Home}
         options={{ 
-          headerTitle: 'Tab One Title',
           header: ({ scene, previous, navigation }) => {
             return ( <Header navigation={navigation} scene={scene} backButton={previous ? true : false} /> );
           }
@@ -95,9 +97,17 @@ function TabTwoNavigator() {
   return (
     <TabTwoStack.Navigator>
       <TabTwoStack.Screen
-        name="TabTwoScreen"
-        component={TabTwoScreen}
-        options={{ headerTitle: 'Tab Two Title',
+        name="Search"
+        component={Search}
+        options={{
+        header: ({ scene, previous, navigation }) => {
+            return ( <Header navigation={navigation} scene={scene} backButton={previous ? true : false} /> );
+          } }}
+      />
+      <TabTwoStack.Screen
+        name="SearchResults"
+        component={SearchResults}
+        options={{
         header: ({ scene, previous, navigation }) => {
             return ( <Header navigation={navigation} scene={scene} backButton={previous ? true : false} /> );
           } }}

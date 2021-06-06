@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Text, StyleSheet } from 'react-native'
+import { TouchableOpacity, View, Text, StyleSheet } from 'react-native'
 import Constants from 'expo-constants';
 import { Ionicons } from '@expo/vector-icons'; 
 
@@ -14,7 +14,7 @@ export default class Header extends React.Component {
 		return(
 			<View style={styles.HeaderContainer}>
 				<View style={styles.HeaderContent}>
-					<Text style={styles.ButtonText}><Ionicons name="menu" size={24} color="#fff" /></Text>
+					<Text style={styles.ButtonText}>{this.props.backButton ? <TouchableOpacity onPress={()=>{this.props.navigation.goBack()}}><Ionicons name="arrow-back-outline" size={24} color="#fff" /></TouchableOpacity> : <Ionicons name="menu" size={24} color="#fff" />}</Text>
 					<Text style={styles.LogoText}>BRINGBACKSUMMER</Text>
 					<Text style={styles.ButtonText}><Ionicons name="notifications-outline" size={24} color="#fff" /></Text>
 				</View>
@@ -25,7 +25,7 @@ export default class Header extends React.Component {
 const styles = StyleSheet.create({
 	HeaderContainer: {
 		height: 90,
-		paddingTop: Constants.statusBarHeight,
+		paddingTop: Constants.statusBarHeight-30,
 		backgroundColor: "#3022ad"
 	},
 	HeaderContent: {
@@ -40,6 +40,7 @@ const styles = StyleSheet.create({
 		color: "#fff"
 	},
 	LogoText: {
+		fontFamily: 'RobotoCondensed_700Bold',
 		fontWeight: "bold",
 		textTransform: "uppercase",
 		fontSize: 16,
