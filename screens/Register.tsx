@@ -29,7 +29,7 @@ export default class Register extends React.Component {
 			<View style={styles.Container}>
 				<View style={styles.LogoWrapper}>
 					<Text style={styles.Logo}>BRINGBACKSUMMER</Text>
-					<Text style={styles.LogoSubtext}>Login</Text>
+					<Text style={styles.LogoSubtext}>Register</Text>
 				</View>
 				<View style={styles.Split} />
 				<View style={styles.InputWrapper}>
