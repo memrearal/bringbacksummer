@@ -22,7 +22,7 @@ export default class FeaturedItem extends React.Component {
 							</Text>
 						</View>
 						<View style={styles.InfoRow}>
-							<Text style={styles.Title}>Hotel HapImag Resort Sea Garden</Text>
+							<Text style={styles.Title}>Hotel IDKITSNAME Resort Sea Garden</Text>
 						</View>
 						<View style={styles.InfoRow}>
 							<View style={styles.Points}>

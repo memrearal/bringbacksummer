@@ -29,11 +29,14 @@ const styles = StyleSheet.create({
 		padding: 10
 	},
 	Title: {
+		fontWeight: "Roboto_700Bold",
 		fontWeight: "bold",
+		fontSize: 16,
 		color: "#000"
 	},
 	SubTitle: {
 		fontWeight: "bold",
+		fontSize: 14,
 		color: "#949494"
 		//color: "#d7d7d7"
 	},

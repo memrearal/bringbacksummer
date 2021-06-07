@@ -15,7 +15,6 @@ export default class FeaturedItemCircular extends React.Component {
 					<Image source={{uri: "https://storage.kucukoteller.com.tr/2019/04/27/1556351618696820.jpg"}} style={styles.Image} />
 					<View style={styles.Infos}>
 						<Text style={styles.Title}>Sahil Hotel</Text>
-						<Text style={styles.SubTitle}>Yalıkavak</Text>
 					</View>
 				</View>
 			</View>
@@ -38,9 +37,11 @@ const styles = StyleSheet.create({
 		borderRadius: 80,
 	},
 	Infos: {
+		marginTop: 5,
 		flexDirection: "column"
 	},
 	Title: {
+		fontSize: 14,
 		textAlign: "center",
 		fontWeight: "bold",
 		color: "#000"

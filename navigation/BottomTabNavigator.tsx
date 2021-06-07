@@ -15,6 +15,8 @@ import useColorScheme from '../hooks/useColorScheme';
 import Home from '../screens/Home';
 import Search from '../screens/Search';
 import SearchResults from '../screens/SearchResults';
+import Login from '../screens/Login';
+import Register from '../screens/Register';
 
 import { BottomTabParamList, TabOneParamList, TabTwoParamList } from '../types';
 function TabBarIcon(props: { name: React.ComponentProps<typeof Ionicons>['name']; color: string }) {
@@ -25,9 +27,23 @@ const customTabBarStyle = {
     inactiveTintColor: 'gray',
     style: {backgroundColor: 'white' },
 }
+
+const AppStack = createStackNavigator();
+export default function AppNavigator(){
+  return(
+    <AppStack.Navigator
+      //initialRouteName="Onboarding"
+    >
+      <AppStack.Screen name="Login" options={{headerShown: false}} component={Login} />
+      <AppStack.Screen name="Register" options={{headerShown: false}} component={Register} />
+      <AppStack.Screen name="Home" options={{headerShown: false}} component={BottomTabNavigator} />
+    </AppStack.Navigator>
+  );
+}
+
 const BottomTab = createBottomTabNavigator<BottomTabParamList>();
 
-export default function BottomTabNavigator() {
+function BottomTabNavigator() {
   return (
       <BottomTab.Navigator
       initialRouteName="Home"
@@ -113,5 +129,37 @@ function TabTwoNavigator() {
           } }}
       />
     </TabTwoStack.Navigator>
+  );
+}
+
+const TabThreeStack = createStackNavigator<TabTwoParamList>();
+
+function TabThreeNavigator() {
+  return (
+    <TabThreeStack.Navigator>
+      <TabThreeStack.Screen
+        name="Login"
+        component={Login}
+        options={{
+          headerShown: false
+        }}
+      />
+    </TabThreeStack.Navigator>
+  );
+}
+
+const TabFourStack = createStackNavigator<TabTwoParamList>();
+
+function TabFourNavigator() {
+  return (
+    <TabFourStack.Navigator>
+      <TabFourStack.Screen
+        name="Register"
+        component={Register}
+        options={{
+          headerShown: false
+        }}
+      />
+    </TabFourStack.Navigator>
   );
 }
