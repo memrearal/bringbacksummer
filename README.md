@@ -12,7 +12,7 @@ BRINGBACKSUMMER, mobil arayüzü React Native ve Expo ile geliştirilen, web sit
  - [x] Taslak uygulama tasarımının hazırlanması [04.06.2021]
  - [x] Ana sayfa (Başlangıç) [05.06.2021]
  - [x] Arama sayfası (06.06.2021)
- - [ ] Giriş ve kayıt sayfası (07.06.2021)
+ - [x] Giriş ve kayıt sayfası (07.06.2021)
  - [ ] Profil sayfası (08.06.2021)
  - [ ] Ana sayfa (Final Versiyon) [09.06.2021]
  - [ ] Otel sayfası (Başlangıç) [10.06.2021]
