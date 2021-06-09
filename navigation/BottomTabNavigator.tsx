@@ -17,6 +17,7 @@ import Search from '../screens/Search';
 import SearchResults from '../screens/SearchResults';
 import Login from '../screens/Login';
 import Register from '../screens/Register';
+import Profile from "../screens/Profile";
 
 import { BottomTabParamList, TabOneParamList, TabTwoParamList } from '../types';
 function TabBarIcon(props: { name: React.ComponentProps<typeof Ionicons>['name']; color: string }) {
@@ -77,14 +78,14 @@ function BottomTabNavigator() {
           tabBarLabel: '',
           tabBarIcon: ({ color }) => <TabBarIcon name="ios-heart-outline" color={color} />,
       }}
-      component={TabTwoNavigator} />
+      component={TabThreeNavigator} />
       <BottomTab.Screen
       name="Profile"
       options={{
           tabBarLabel: '',
           tabBarIcon: ({ color }) => <TabBarIcon name="ios-person-outline" color={color} />,
       }}
-      component={TabTwoNavigator} />
+      component={TabFourNavigator} />
       </BottomTab.Navigator>
   );
 }
@@ -97,7 +98,7 @@ function TabOneNavigator() {
       <TabOneStack.Screen
         name="Home"
         component={Home}
-        options={{ 
+        options={{
           header: ({ scene, previous, navigation }) => {
             return ( <Header navigation={navigation} scene={scene} backButton={previous ? true : false} /> );
           }
@@ -154,10 +155,12 @@ function TabFourNavigator() {
   return (
     <TabFourStack.Navigator>
       <TabFourStack.Screen
-        name="Register"
-        component={Register}
+        name="Profile"
+        component={Profile}
         options={{
-          headerShown: false
+          header: ({ scene, previous, navigation }) => {
+            return ( <Header navigation={navigation} scene={scene} backButton={previous ? true : false} /> );
+          }
         }}
       />
     </TabFourStack.Navigator>

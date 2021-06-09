@@ -41,6 +41,7 @@ const styles = StyleSheet.create({
 		//color: "#d7d7d7"
 	},
 	Items: {
+		paddingRight: 10,
 		paddingBottom: 20
 	}
 });
